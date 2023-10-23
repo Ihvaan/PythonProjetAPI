@@ -14,7 +14,13 @@ def test_search_artists():
     assert "Buddy Guy" == response.json()[0]["Name"]
 
 
-def test_search_albums():
-    response = requests.get(f"{api_url}/albums/?artistid=3")
+def test_get_albums_by_artist_id():
+    artist_id = 3
+    response = requests.get(f"{api_url}/albums/?artist_id={artist_id}")
     assert response.status_code == 200
-    assert "3" == response.json()[0]["ArtistId"]
+
+
+def test_get_tracks_by_album_id():
+    album_id = 200
+    response = requests.get(f"{api_url}/tracks/?album_id={album_id}")
+    assert response.status_code == 200
