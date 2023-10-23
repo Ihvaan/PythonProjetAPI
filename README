@@ -1,0 +1,35 @@
+Music Search API
+
+This project is an API that allows you to search for music-related information. You can search for artists, get albums by artist ID, and retrieve tracks by album ID. It uses the Chinook database, an SQLite database containing music-related data.
+
+How to Run the Project
+
+1/ Clone the Git Repository
+
+git clone <Git-repository-URL>
+
+2/ Set Up the Python Environment
+
+python -m venv venv
+source venv/bin/activate  # On Linux/Mac
+venv\Scripts\activate  # On Windows
+
+3/ Install Dependencies
+
+pip install -r requirements.txt
+
+4/ Run the FastAPI API
+
+uvicorn main:app --host 0.0.0.0 --port 8000
+
+5/ Run the Client (Optional)
+
+python client.py
+
+Using the API
+
+The API has three main routes:
+
+A. /artists/: Used to search for artists by name.
+B. /albums/: To get albums by artist ID.
+C. /tracks/: To get tracks by album ID.
